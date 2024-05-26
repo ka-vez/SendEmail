@@ -12,7 +12,7 @@ def content(request):
         email = request.POST['email']
         name = request.POST['name']
 
-        send_mail(name, message, 'settings.EMAIL_HOST_USER', [email], fail_silently = False)
+        send_mail(name, message, [email], 'settings.EMAIL_HOST_USER',  fail_silently = False)
         
     return render(request, 'index.html')
     
